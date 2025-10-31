@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us section</title>
+        <style>
+            *{
+                margin:0px;
+                padding:0px;
+                box-sizing: border-box;
+                font-family:'Times New Roman', Times, serif;
+            }
+            body{
+                background-color:white;
+
+            }
+            .heading{
+                width: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                flex-direction: column;
+                text-align: center;
+                margin: 20px auto;
+
+            }
+            .heading h1{
+                font-size: 50px;
+                color:#000;
+                margin-bottom: 25px;
+                position: relative;
+
+            }
+            .heading h1::after{
+                content:"";
+                position: absolute;
+                width:100%;
+                height:4px;
+                display:block;
+                margin:0 auto;
+                background-color: #4caf50;
+            }
+            .heading p{
+                font-size: 18px;
+                color: black;
+                margin-bottom: 10px 20px;
+
+            }
+            .container{
+                width: 90%;
+                margin: 0 auto;
+                padding:10px 20px;
+            }
+            .about{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+                gap:30px;
+
+
+
+            }
+            .about image{
+                flex: 1;
+                margin-left: 40px;
+                overflow: hidden;
+
+            }
+            .about image img{
+                max-width:100%;
+                height: auto;
+                display: block;
+                transition:0.5s ease;
+
+            }
+            .about image:hover img{
+                transform:scale(1.2);
+
+
+            }
+            .about-content{
+                flex: 1;
+            }
+            .about content h2{
+                font-size: 23px;
+                margin-bottom: 15px;
+                color:#333;
+
+
+            }
+            .about content p{
+                font-size: 18px;
+                line-height: 1.5;
+                color:#666
+            }
+            .about-content .read-more{
+                display:inline-block;
+                padding:10px 20px;
+                background-color:green;
+                color: #fff;
+                font-size: 19px;
+                text-decoration: none;
+                border-radius: 25px;
+                margin-top: 15px;
+                transition: 0.3s ease;
+            }
+            .about-content .read-more:hover{
+                background-color: #3e8e41;
+
+            }
+            @media  screen and(max-width: 768px) {
+                .heading{
+                    padding:0px 20px;
+                }
+                .heading h1{
+                    font-size: 36px;
+
+                }
+                .heading p{
+                    font-size: 17px;
+                    margin-bottom: 0px;
+                }
+                .container{
+                    padding: 0px;
+
+
+                }
+                .about{
+                    padding:20px;
+                    flex-direction: column;
+                }
+                .about-image{
+                    margin-left: 0px;
+                    margin-bottom: 20px;
+                }
+                .about-content p{
+                    padding:0px;
+                    font-size: 16px;
+
+
+                }
+                .about-content .read-more{
+                    font-size: 16px;
+                }
+
+                
+            }
+
+        </style>
+
+
+
+
+    <head>
+        <body>
+            <div class="heading">
+            <h1>Members</h1>
+            <p>GlobeTrotters</p>
+        </div>
+        <div class="container">
+            <section class="about">
+                <div class="about-image">
+                    <img src="fatma.jpg.png">
+
+                </div>
+                <div class=" about-content">
+                    <h2>Fatma Ali</h2><br>
+                    <p>Role:  Admin and Co-Owner</p><br>
+                    <p>Bio:</p><br>
+                    <p> I love traveling, capturing moments through photography, 
+                        and using technology to share these experiences.  </p><br>
+                    
+
+                    <p>What I do:</p><br>
+                    <p>As the Admin and Co-owner of TheTraveler.Abroad,
+                        I manage the team, decide on the design, 
+                        features, contents, and guide our contributor.
+                        I also write and review code to make sure the website 
+                        works perfectly and is easy for visitors to use</p><br>
+
+
+                    
+                    <p>Contact info:</p>
+                    <p>Email: fatma.abdourahmane@ashesi.edu.gh</p>
+                    <p>Phone: +233 503666458</p>
+                </div>
+                <div class="about-image">
+                    <img src="rafia.jpg.png">
+
+                </div>
+                <div class=" about-content">
+                    <h2>Rafiatou Malam Ali</h2><br>
+                    <p>Role: Web Designer</p><br>
+                    <p>Bio:</p><br>
+                    <p>I am a Management Infromation Systems Student 
+                        with a passion for creativity and design.
+                        As the Designer for our travel website project, 
+                        I focuse on creating a clean attractive , and user-friendly 
+                        interface that highlights the beauty of African destinations.</p><br>
+                    
+
+                    <p>What I do:</p><br>
+                    <p>Designed the overall layout and color theme of the website.
+                        Selected fonts, images, and icons that match the African 
+                        travel theme. Ensured the pages are well-organized and easy 
+                        to navigate. I work with the Co-Owner to make the design fit the 
+                        text and stories. Adjust the Wix theme for visual consistency.</p><br>
+
+
+                    <p>Contact info:</p><br>
+
+                    
+                    
+                    <p>Email: Rafiatou.ali@ashesi.edu.gh</p>
+                    <p>Phone: +233 503836061</p><br>
+                    <p>“Design creates culture. Culture shapes value. Values determine future.”</p>
+                </div>
+                <div class="about-image">
+                    <img src="naima.jpg.png">
+
+                </div>
+                <div class=" about-content">
+                    <h2>Na'ima Mohamet Aloula</h2><br>
+                    <p>My Role: </p><br>
+                    <p>Bio:Web Editing:</p><br>
+                    <p>I handle the web editing to make sure the final text is optimized and 
+                        presented perfectly online.</p><br>
+                    <p>I am a dedicated researcher and writer specializing 
+                        in turning complex facts into clear, compelling narratives.
+                        As the Content Writer and Researcher for our project, 
+                        I focus on gathering the necessary information, ensuring its accuracy, 
+                        and shaping it into engaging content that communicates our message effectively.</p><br>
+                    
+
+                    <p>What I do:</p><br>
+                    <p>Research: I conduct deep, expert research to find all the 
+                        necessary information and details for our project.
+                        Content Creation: I write and edit all project content,
+                        making difficult information easy for our audience to understand.
+                        Accuracy Check: I ensure all facts, details, and stories are correct and reliable.</p>
+
+
+                    
+
+                    
+                    <p>Contact info:</p>
+                    <p>Email: Amatullahaloula@gmail.com</p>
+                    <p>Phone: +233 50 354 6664</p><br>
+                    <p>"If you are not clear, you are not accurate."</p>
+                </div>
+                <div class="about-image">
+                    <img src="mariam.jpg.png">
+
+                </div>
+                <div class=" about-content">
+                    <h2>My name is Mariam Goge Kessa</h2><br>
+                    <p>My Role: Website manager</p><br>
+                    <p>Bio:</p><br>
+                    <p>I am Mariam, and I manage the Traveler Abroad website. 
+                        I take care of updates, design and content so travelers can easily find what they need online,
+                        I enjoy helping our user to explore the world of Africa through a smooth and well-organised website: 
+                        "The Traveler Abroad".</p><br>
+                    
+
+                    <p>What I do:</p><br>
+                    <p></p>
+
+
+                    <p>I update and organize travel posts and pages, 
+                       check that the website runs fast and smoothly. 
+                       I work with my colleagues web designer and web 
+                       editor to improve the site visibility to our users, 
+                       by making sure that the information is correct and easy to use.
+                    </p><br>
+
+                    
+                    <p>Contact info:</p>
+                    <p>Email: mariam.kessa@ashesi.edu.gh</p>
+                    <p>Phone:+233 503641976  // +22797258237</p>
+
+                        <a href=""   class="read-more">Read more</a>
+
+                </div>
+            </section>
+        </div>
+
+        </body>
+<html>
