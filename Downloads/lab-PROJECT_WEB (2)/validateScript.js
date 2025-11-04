@@ -1,8 +1,12 @@
 document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
     let username =document.getElementById("username").ValueMax.trim();
     let password= document.getElementById("password").value.trim();
+
     let usernamePattern =/^[a-zA-Z0-9_]{2,50}$/;
     let passwordPattern =/.{8,}/;
+    
 
     if (!usernamePattern.test(username)) {
         alert("Invalid username. It must be 2-50 characters long and can only contain letters, numbers, or underscores.");
@@ -21,5 +25,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         event.preventDefault();
         return;
     }
+
+   
 
 });

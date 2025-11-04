@@ -8,7 +8,8 @@
 
         </head>
         <body>
-        <form>
+        <form id ="signupForm" onsubmit="return validateSignup()">
+            event.preventDefault();
             <div class ="input_datacontainer">
                 <h1>Sign Up</h1>
 
@@ -50,7 +51,7 @@
 
                 <p class =message>
                     Do you already have an account?
-                    <a href="Login.html">Login in here</a>
+                    <a href="index.html">Login in here</a>
                 </p>
 
             </div>
