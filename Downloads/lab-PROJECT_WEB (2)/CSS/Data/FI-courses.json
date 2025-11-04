@@ -1,0 +1,13 @@
+[
+    {"id": "CS123", 
+    "title":"Discrete structures and theory", 
+    "instructor":"Dr Govindha",
+     "enrolled":32},
+
+
+    {"id": "CS121", 
+    "title":"Database Systems",
+    "instructor":"Dr Stephane", 
+    "enrolled":45}
+
+]

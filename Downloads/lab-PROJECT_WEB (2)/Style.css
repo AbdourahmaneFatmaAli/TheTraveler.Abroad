@@ -1,0 +1,123 @@
+body{
+    background-color: pink;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    border : 20px solid black;
+    width: 1230px;
+    height: 2100px;
+    border-radius: 0px;
+    padding:0px;
+    animation:both 5s ease-in-out infinite;
+    -ms-layout-grid-mode: both;
+}
+
+header{background-color:maroon;
+    color: white;
+    padding:15px 0;
+
+}
+
+nav{
+    display; flex;
+    background-color:DodgerBlue;
+    text-align: center;
+    padding: 10px;
+    justify-content:space-around;
+    border-radius: 10px;
+    flex-wrap:wrap;
+}
+
+nav a{color:white;
+    margin:10px;
+    font-weight:bold;
+    transition; color 0.2s;
+
+}
+
+nav a:hover{
+    text-decoration:underline;
+    color:green;
+}
+
+
+
+nav h1{
+    font-size:24px;
+    text-align:center;
+    color:black;
+    letter-spacing:1px;
+}
+
+main{padding:25px;
+
+}
+
+section{
+    background-color:DodgerBlue;
+    text-align:center;
+    padding:20px;
+    width:1180px;
+    margin:5px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow: 2px 2px 5px MediumBlue;
+
+}
+
+section h3{color:maroon;
+    text-transform:capitalize;
+
+}
+
+a{color:white;
+
+}
+
+a:hover{color:green;
+    text-decoration:underline;
+    font-weight:bold;
+
+}
+
+.course_card , .sessions_card, .reports_card, .auditors_card{
+    border-radius:10px;
+    background-color:#f0f4fa;
+    padding:10px;
+    margin-top:8px;
+    border-left: 6px solid brown;
+}
+
+.auditors_card h4, .course_card h4, .reports_card h4, .sessions_card h4{
+    color:#f0f4fa;
+    margin-bottom:6px
+}
+
+button{
+    background-color:DodgerBlue;
+    border:5px;
+    cursor: pointer;
+    color: white;
+    padding:10px 50px;
+    border-radius:4px;
+    transition: background-color 0.02s;
+    
+}
+
+button:hover{
+    background-color:yellowgreen;
+    font-weight:bold;
+    color:#000f;
+    
+    
+}
+
+footer{
+    color: darkBlue;
+    width:100%;
+    padding:12px;
+    text-align:center;
+}
+
+h1{
+    text-align:center;
+}

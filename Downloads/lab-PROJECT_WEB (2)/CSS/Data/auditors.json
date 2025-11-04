@@ -1,0 +1,12 @@
+[
+    {"name":"Rafiatou Malam Ali", 
+    "student_id":30782027,
+    "course":"Discrete structures theory",
+    "role":"observer"},
+    
+    {"name":"Safiya Isa", 
+    "student_id":40032027, 
+    "course":"Quantitative Methods", 
+    "role":"auditor"}
+
+]

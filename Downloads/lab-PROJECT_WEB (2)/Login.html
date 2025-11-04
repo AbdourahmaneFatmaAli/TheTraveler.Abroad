@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset ="UTF-8">
+        <meta name ="viewport" content ="width=device-width, initial-scale=1.0">
+        <title>Login page</title>
+        <link rel ="stylesheet" href="CSS/Style.css">
+    </head>
+
+    <body>
+        <form>
+            <h1>Login Form</h1>
+            <div class ="input_dataconainer">
+                <label for ="userName">Username:</label>
+                <input type ="text" id ="userName" name="Username" 
+                placeholder ="User Name:" 
+                required
+                minlength="2"
+                maxlength="50"
+                title="usename must contain only lrtters, numbers or underscores">
+
+                <label for ="password">password:</label>
+                <input type ="password" id ="password" name="password"
+                 placeholder="password" required
+                 minlength="8"
+                 title="Password must be at least 8 characters long">
+
+                <button type =Submit class="btn">Login</button>
+                <p class ="msg"> 
+                    Don't have an account?
+                    <a href ="Signup.html">register here</a>
+                </p>
+            </div>
+        </form>
+
+        <script src="validateScript.js"></script>
+    </body>
+</html>
