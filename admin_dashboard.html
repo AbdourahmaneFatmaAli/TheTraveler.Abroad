@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <meta charset="UTF-8">
+    <meta name =" viewport" content ="width=device-width" initial-scale=" 1">
+    <head>
+        <title>Admin Dashboard</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body class="dashboard">
+        <div class="navbar">
+            <h2>Admin Dashboard</h2>
+            <a href="login.html" onclick="logout()">Logout</a>
+        </div>
+
+        <div class="dashboard-container">
+            <h3>Welcome, Admin!</h3>
+            <p>Manage users, approve contributors, and monitor platform activity.</p>
+
+        <div class="card-container">
+            <div class="card">
+                <h4>View All Users</h4>
+                <p>See all registered accounts and their roles.</p>
+            </div>
+
+            <div class="card">
+            <h4>Approve Contributors</h4>
+            <p>Approve or reject contributor access requests.</p>
+        </div>
+
+            <div class="card">
+                <h4>System Reports</h4>
+                <p>View system usage statistics and logs.</p>
+            </div>
+        </div>
+    </div>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("userRole");
+      alert("Logged out successfully!");
+    }
+  </script>
+</body>
+</html>
