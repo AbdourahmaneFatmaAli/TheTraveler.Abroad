@@ -3,34 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Architecture</title>
+<title>Final System Architecture</title>
 <style>
-body{font-family:Arial;text-align:center}
-nav{background:black;padding:10px}
-nav a{color:white;text-decoration:none;margin:8px}
-.box{width:80%;max-width:600px;margin:auto;background:#f3f3f3;
-     padding:15px;border-radius:8px}
-.step{background:white;border:2px solid orange;border-radius:8px;
-      padding:10px;margin:10px auto;width:250px;font-weight:bold}
-.arrow{width:3px;height:20px;background:orange;margin:auto}
+    /* GENERAL STYLES */
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; margin: 0; background-color: #f8f9fa; color: #333; }
+    
+    /* NAVIGATION */
+    nav { background: black; padding: 15px; display: flex; justify-content: center; gap: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+    nav a { color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; transition: 0.3s; }
+    nav a:hover { color: orange; }
+
+    /* MAIN LAYOUT */
+    .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+    
+    .grid-layout { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-bottom: 40px; }
+    
+    .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); flex: 1; min-width: 300px; border-top: 5px solid orange; }
+    
+    h2 { margin-top: 0; color: #222; font-size: 22px; }
+    p.subtext { color: #666; font-size: 14px; margin-bottom: 25px; }
+
+    /* DIAGRAM BOXES */
+    .box { background: #fff; border: 2px solid #444; padding: 12px; border-radius: 6px; font-weight: bold; width: 80%; margin: 0 auto; position: relative; transition: transform 0.2s; }
+    .box:hover { transform: scale(1.02); }
+    .box.highlight { background: orange; color: white; border-color: orange; }
+    .box.action { border-style: dashed; border-color: orange; color: #d35400; }
+    .box.db { border-radius: 0 0 20px 20px; border-top: 4px double #444; background: #f4f4f4; }
+
+    /* CONNECTORS */
+    .arrow-down { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid #444; margin: 5px auto; }
+    .line { width: 2px; height: 20px; background: #444; margin: 0 auto; }
+
+    /* TECH LABELS */
+    .tech-label { font-size: 11px; font-weight: bold; color: #999; letter-spacing: 1px; margin: 15px 0 5px 0; text-transform: uppercase; }
+
+    /* TEXT EXPLANATION SECTION */
+    .info-section { text-align: left; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); line-height: 1.6; }
+    .info-section h3 { color: orange; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+    .info-section ul { list-style-type: square; color: #555; }
+    
+    /* FOOTER */
+    footer { background: #222; color: #777; padding: 20px; margin-top: 50px; font-size: 12px; }
 </style>
 </head>
 <body>
+
 <nav>
-  <a href="index.html">Home</a> 
-  <a href="about_project.html">About</a> 
-  <a href="architecture.html">Architecture</a> 
-  <a href="upload.html">Upload</a> 
+  <a href="index.html">Home</a>
+  <a href="about_project.html">About</a>
+  <a href="architecture.html" style="color:orange">Architecture</a>
+  <a href="upload.html">Upload</a>
   <a href="Members.html">Members</a>
 </nav>
-<h2 style="color:orange">Website Architecture</h2>
-<div class="box">
-  <p>This shows how users move in our site.</p>
-  
-  <div class="step">SignUp page </div><div class="arrow"></div>
-  <div class="step">Login Page</div><div class="arrow"></div>
-  <div class="step">Home Page/Destination </div><div class="arrow"></div>
-  <div class="step">Upload Experience Page </div>
+
+<div class="container">
+
+  <h1 style="margin-bottom:10px;">System Architecture</h1>
+  <p style="margin-bottom:40px; color:#666;">Visualizing the User Flow and Technical Stack of TravelAbroad</p>
+
+  <div class="grid-layout">
+
+    <div class="card">
+      <h2>User Journey Map</h2>
+      <p class="subtext">The path a user takes from landing to booking.</p>
+      
+      <div class="box">Visitor Lands on Homepage</div>
+      <div class="line"></div><div class="arrow-down"></div>
+      
+      <div class="box">Sign Up / Login</div>
+      <div class="line"></div><div class="arrow-down"></div>
+      
+      <div class="box highlight">User Dashboard</div>
+      <div class="line"></div><div class="arrow-down"></div>
+      
+      <div class="box">Explore Destinations</div>
+      <div class="line"></div><div class="arrow-down"></div>
+      
+      <div class="box">Booking & Confirmation</div>
+      <div class="line"></div><div class="arrow-down"></div>
+
+      <div class="box action">Upload Experience</div>
+    </div>
+
+    <div class="card">
+      <h2>Technical Stack</h2>
+      <p class="subtext">MVC Architecture Data Flow.</p>
+
+      <div class="tech-label">CLIENT TIER (Frontend)</div>
+      <div class="box">
+          HTML5 / CSS3 / JS
+          <br><span style="font-size:12px; font-weight:normal; color:#555;">(User Interface)</span>
+      </div>
+      
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="arrow-down"></div>
+
+      <div class="tech-label">APPLICATION TIER (Backend)</div>
+      <div class="box highlight">
+          PHP 8.0
+          <br><span style="font-size:12px; font-weight:normal;">(Auth, Logic, API)</span>
+      </div>
+
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="arrow-down"></div>
+
+      <div class="tech-label">DATA TIER (Storage)</div>
+      <div class="box db">
+          MySQL Database
+          <br><span style="font-size:12px; font-weight:normal; color:#555;">(Users & Bookings)</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="info-section">
+    <h3>Architectural Overview</h3>
+    <p>The TravelAbroad platform utilizes a traditional <strong>Three-Tier Web Architecture</strong> to ensure secure and efficient data processing. This structure separates the user interface from the business logic and data storage.</p>
+    
+    <div style="display:flex; flex-wrap:wrap; gap:20px;">
+        <div style="flex:1;">
+            <h4>1. Frontend (Client)</h4>
+            <p>Built using Vanilla JavaScript and HTML5. The client handles form validation and sends asynchronous (AJAX) requests to the server, ensuring the page does not need to reload for every action.</p>
+        </div>
+        <div style="flex:1;">
+            <h4>2. Backend (Server)</h4>
+            <p>Powered by PHP. The server manages user sessions, hashes passwords for security using <code>password_hash()</code>, and processes booking logic before interacting with the database.</p>
+        </div>
+        <div style="flex:1;">
+            <h4>3. Database</h4>
+            <p>A Relational MySQL database stores User profiles, Destination details, and Booking records. All queries use <strong>Prepared Statements</strong> to prevent SQL injection attacks.</p>
+        </div>
+    </div>
+  </div>
+
 </div>
+
+<footer>
+  &copy; 2024 TravelAbroad Project. All Rights Reserved.
+</footer>
+
 </body>
 </html>
