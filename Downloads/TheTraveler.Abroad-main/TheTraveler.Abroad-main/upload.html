@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload</title>
+<style>
+body{font-family:Arial;text-align:center}
+nav{background:black;padding:10px}
+nav a{color:white;text-decoration:none;margin:8px}
+.box{width:80%;max-width:500px;margin:auto;background:#f3f3f3;padding:15px;border-radius:8px}
+label{display:block;text-align:left;margin-top:8px}
+input,textarea{width:100%;padding:7px;border:1px solid #ccc;border-radius:5px}
+button{margin-top:10px;background:orange;color:#fff;border:none;padding:8px 15px;border-radius:5px}
+.msg{background:orange;color:#fff;padding:8px;margin-top:10px;border-radius:5px}
+.story{background:white;border:1px solid #ddd;margin-top:10px;padding:10px;border-radius:6px}
+img{width:100%;border-radius:6px}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html">Home</a> 
+  <a href="about_project.html">About</a> 
+  <a href="architecture.html">Architecture</a> 
+  <a href="upload.html">Upload</a> 
+  <a href="Members.html">Members</a>
+</nav>
+<h2>Share Your Experience</h2>
+<div class="box">
+<form id="form">
+  <label>Name:</label><input id="name" required>
+  <label>Email:</label><input type="email" id="email" required>
+  <label>Destination:</label><input id="dest" required>
+  <label>Photo:</label><input type="file" id="photo" accept="image/*" required>
+  <label>Story:</label><textarea id="story" required></textarea>
+  <button>Submit</button>
+</form>
+<div id="msg"></div><div id="list"></div>
+</div>
+<script>
+let data=[];
+form.onsubmit=e=>{
+ e.preventDefault();
+ let r=new FileReader();
+ r.onload=x=>{
+  data.push({n:name.value,d:dest.value,s:story.value,img:x.target.result});
+  msg.innerHTML=`<div class='msg'> GlobeTrotters: Thank you!</div>`;
+  show();form.reset();
+  setTimeout(()=>msg.innerHTML="",3000);
+ };
+ r.readAsDataURL(photo.files[0]);
+};
+function show(){
+ list.innerHTML="";
+ data.forEach(x=>{
+  list.innerHTML+=`<div class='story'><h4>${x.d}</h4><img src='${x.img}'><p>${x.s}</p></div>`;
+ });
+}
+</script>
+</body>
+</html>
