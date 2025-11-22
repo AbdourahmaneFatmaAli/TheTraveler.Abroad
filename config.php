@@ -1,4 +1,3 @@
-
 <?php
 $host = 'localhost';
 $dbname = 'webtech_project';
@@ -14,9 +13,3 @@ try {
 }
 
 ?>
-
-
-
-
-
-
