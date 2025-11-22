@@ -45,8 +45,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
     </head>
-
-    <!--Body-->
     <body class="login-page">
         <div class="login-container">
             <h2>Login</h2>

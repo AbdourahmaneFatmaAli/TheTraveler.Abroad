@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,9 +19,9 @@
             <li class="link"><a href="index.html">Home</a></li>
             <li class="link"><a href="about_project.html">About</a></li>
             <li class="link"><a href="architecture.html">Architechture</a></li>
-            <li class="link"><a href="login.html">Login</a></li>
+            <li class="link"><a href="login.php">Login</a></li>
             <li class="link"><a href="signup.php">Sign Up</a></li> 
-            <li class="link"><a href="upload.html">Upload</a></li>
+            <li class="link"><a href="upload.php">Upload</a></li>
             <li class="link"><a href="Members.html">Members</a></li>
          
 
@@ -249,64 +250,57 @@
       
 
     </div>
-    <section id= 'shared_experiences'>
-    <h2>Shared Experiences </h2>
+    <section id='shared_experiences'>
+    <h2>Shared Experiences</h2>
     <p>Discover what users have shared about their journey</p>
- 
 
-    <div class='journey_g' id = 'user-experiences'></div>
+    <?php if (isset($_GET['success']) && $_GET['success'] == '1'): ?>
+        <div style="background-color: #d4edda; color: #155724; padding: 15px; border-radius: 5px; margin: 20px 0; text-align: center;">
+            Your travel story has been shared successfully!
+        </div>
+    <?php endif; ?>
 
-    
-
-    <script>
-
-      const userExperiences = [
-        {
-          name: 'Kwabena Nyame',
-          email:'kwabena@gmail.com',
-          story:'Ghana is a country in West Africa. It has friendly people, beautiful beaches, green forests, and busy cities. It is full of culture, history, and exciting places to visit',
-          image: 'Assets/tour-operator_guide-kophi-tours_aburi-day-tour_2025-07-02_2388-l.jpg'
-        },
-
-
-       {
-          name: 'Basmath Gomez',
-          email:'Basmath@gmail.com',
-          story:'South Africa is famous for Table Mountain in Cape Town, Kruger National Park with its Big Five animals, and the stunning Garden Route along the coast. It is full of culture you won’t find anywhere else.',
-          image: 'Assets/tebogo-losaba-ybjhQsdXxzY-unsplash-scaled.webp',
+    <div class='journey_g' id='user-experiences'>
+        <?php
+        // Fetch user experiences from database
+        include 'config.php';
+        
+        try {
+            $stmt = $pdo->query("
+                SELECT e.first_name, e.email, e.destination, e.description, ei.image_url 
+                FROM experiences e 
+                LEFT JOIN experience_images ei ON e.experience_id = ei.experience_id 
+                ORDER BY e.experience_id DESC
+            ");
+            $experiences = $stmt->fetchAll();
+            
+            if (count($experiences) > 0) {
+                foreach ($experiences as $exp) {
+                    echo "
+                    <div class='destination-wrapper'>
+                        <div class='country_card'>
+                            <img src='{$exp['image_url']}' alt='{$exp['destination']}'>
+                            <div class='country_name'>
+                                <i class='ri-map-pin-fill'></i>
+                                <span>{$exp['destination']}</span>
+                            </div>
+                            <div style='padding: 0 1rem 1rem 1rem;'>
+                                <p><strong>Shared by:</strong> {$exp['first_name']} ({$exp['email']})</p>
+                                <p>{$exp['description']}</p>
+                            </div>
+                        </div>
+                    </div>
+                    ";
+                }
+            } else {
+                echo "<p style='text-align: center; width: 100%;'>No travel experiences shared yet. Be the first to <a href='upload.php'>share your story</a>!</p>";
+            }
+        } catch (PDOException $e) {
+            echo "<p style='text-align: center; color: red;'>Error loading experiences: " . $e->getMessage() . "</p>";
         }
-      ];
-   
-const container = document.getElementById('user-experiences');
-
-userExperiences.slice(0,3).forEach(exp => {
-
- 
- const card= document.createElement('a');
-  card.href = exp.link || "#";
-  card.classList.add('country_card');
-  card.innerHTML=`
-  <img src='${exp.image}' alt='${exp.name}'>
-  <div class= 'country_name'>
-    <i class='ri-map-pin-fill'
-    <span>${exp.name}, ${exp.email}</span>
-  </div>
-  <p style = "padding: 0 1rem 1rem 1rem; font-style: normal; font-weight: normal; color: black;">
-
-     ${exp.story}
- </p>
-  `;
-
-  container.appendChild(card);
-  
-});
-
-
-
-
-
-
-</script>
+        ?>
+    </div>
+</section>
 
 
 

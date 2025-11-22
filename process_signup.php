@@ -31,7 +31,7 @@ $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $stmt->execute([$username, $email, $hashed_password, $first_name, $last_name]);
 
         $_SESSION['signup_success'] = 'Account created successfully! Please login.';
-        header('Location: /TheTraveler.Abroad/login.html'); 
+        header('Location: /TheTraveler.Abroad/login.php'); 
         exit();
 
     } catch (PDOException $e) {
