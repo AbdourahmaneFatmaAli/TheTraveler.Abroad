@@ -35,7 +35,7 @@ $stmt->execute([
 ]);
 
 
-header("Location: morondava.php");
+header("Location: Agadez.php");
     exit;
     
 }
@@ -51,7 +51,7 @@ $comments = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>grandpopo, Benin</title>
+    <title>Agadez, Niger</title>
     
 
 
@@ -182,7 +182,7 @@ $comments = $stmt->fetchAll();
 
 
     </div>
-    <a href="index.">Back to Home</a>
+    <a href="index.php">Back to Home</a>
 
     
     <div class="comments-section">
