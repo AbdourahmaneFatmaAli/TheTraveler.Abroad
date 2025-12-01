@@ -63,6 +63,46 @@
     </div>
 
     <a href="index.html">Back to Home</a>
+
     
+    <div class="comments-section">
+      <h4 class="comment-section-title">Leave a comment</h4>
+      <form class="comment-form" id="commentForm">
+              <input type="text" name="author" required placeholder="Your name" required>
+              <input type="email" name="email" required placeholder="Your Email" required>
+              <textarea name="content" rows="3" required placeholder="Share your thoughts..." required></textarea>
+              <button type="submit">Post Comment</button>
+      </form>
+
+      <h2>Comments</h2>
+      <div id="commentsContainer">
+
+          <p>No comments yet. Be the first to Comment!</p>
+      </div>
+    </div>
+ <script>
+    const form = document.getElementById('commentForm');
+    const container = document.getElementById('commentsContainer');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      const author = form.author.value.trim();
+      const email = form.email.value.trim();
+      const content = form.content.value.trim();
+
+      if(author && email && content){
+        const commentDiv = document.createElement('div');
+        commentDiv.classList.add('comment');
+        commentDiv.innerHTML = `<p><strong>${author}</strong> (${email})</p><p>${content}</p>`;
+        
+       
+        container.prepend(commentDiv);
+
+        form.reset();
+      }
+    });
+  </script>
+
 </body>
 </html>

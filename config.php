@@ -5,11 +5,11 @@ $username = 'root';
 $password = '';
 
 try {
-
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+  
 } catch (PDOException $e) {
-    die("Could not connect to the database $dbname:" . $e->getMessage());
+    die("Could not connect to the database $dbname: " . $e->getMessage());
 }
-
 ?>

@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 14, 2025 at 05:05 AM
+-- Host: localhost
+-- Generation Time: Nov 30, 2025 at 06:42 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -109,6 +109,14 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `username`, `email`, `password`, `first_name`, `last_name`, `role`, `created_at`) VALUES
+(1, 'sally', 'm@gmail.com', '$2y$10$x6QOLulj81Dz6hmgN0WpqOrYzYPGXYr4wOI0jqRlJaIM2sCyQxLHi', 'Rafiatou', 'Ali', 'visitor', '2025-11-30 09:39:48'),
+(2, 'fatma', 'fatmaaliabdourahmane@gmail.com', '$2y$10$U0N/iybk6l3LaW2LOf5VV.sjxFT.8pH/HWYlymYzMCd6wnQN7ZJ1y', 'Fatou', 'Ali', 'admin', '2025-11-30 09:39:48');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -190,7 +198,7 @@ ALTER TABLE `members`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables

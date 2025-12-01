@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Final System Architecture</title>
 <style>
-    /* GENERAL STYLES */
+  
     body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; margin: 0; background-color: #f8f9fa; color: #333; }
     
-    /* NAVIGATION */
+   
     nav { background: black; padding: 15px; display: flex; justify-content: center; gap: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
     nav a { color: white; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; transition: 0.3s; }
     nav a:hover { color: orange; }
 
-    /* MAIN LAYOUT */
+   
     .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
     
     .grid-layout { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-bottom: 40px; }
@@ -23,33 +23,33 @@
     h2 { margin-top: 0; color: #222; font-size: 22px; }
     p.subtext { color: #666; font-size: 14px; margin-bottom: 25px; }
 
-    /* DIAGRAM BOXES */
+
     .box { background: #fff; border: 2px solid #444; padding: 12px; border-radius: 6px; font-weight: bold; width: 80%; margin: 0 auto; position: relative; transition: transform 0.2s; }
     .box:hover { transform: scale(1.02); }
     .box.highlight { background: orange; color: white; border-color: orange; }
     .box.action { border-style: dashed; border-color: orange; color: #d35400; }
     .box.db { border-radius: 0 0 20px 20px; border-top: 4px double #444; background: #f4f4f4; }
 
-    /* CONNECTORS */
+ 
     .arrow-down { width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid #444; margin: 5px auto; }
     .line { width: 2px; height: 20px; background: #444; margin: 0 auto; }
 
-    /* TECH LABELS */
+
     .tech-label { font-size: 11px; font-weight: bold; color: #999; letter-spacing: 1px; margin: 15px 0 5px 0; text-transform: uppercase; }
 
-    /* TEXT EXPLANATION SECTION */
+  
     .info-section { text-align: left; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); line-height: 1.6; }
     .info-section h3 { color: orange; border-bottom: 2px solid #eee; padding-bottom: 10px; }
     .info-section ul { list-style-type: square; color: #555; }
     
-    /* FOOTER */
+ 
     footer { background: #222; color: #777; padding: 20px; margin-top: 50px; font-size: 12px; }
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html">Home</a>
+  <a href="index.php">Home</a>
   <a href="about_project.html">About</a>
   <a href="architecture.html" style="color:orange">Architecture</a>
   <a href="upload.html">Upload</a>
@@ -72,15 +72,13 @@
       
       <div class="box">Sign Up / Login</div>
       <div class="line"></div><div class="arrow-down"></div>
-      
-      <div class="box highlight">User Dashboard</div>
-      <div class="line"></div><div class="arrow-down"></div>
-      
+  
       <div class="box">Explore Destinations</div>
       <div class="line"></div><div class="arrow-down"></div>
-      
-      <div class="box">Booking & Confirmation</div>
+
+      <div class="box">User Profile/Edit</div>
       <div class="line"></div><div class="arrow-down"></div>
+      
 
       <div class="box action">Upload Experience</div>
     </div>

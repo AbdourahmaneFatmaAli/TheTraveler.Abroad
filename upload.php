@@ -2,6 +2,7 @@
 session_start();
 include 'config.php';
 
+
 if (!isset($_SESSION['user_id'])) {
   header('Location: login.php');
   exit;
@@ -294,6 +295,12 @@ input[type="file"]::file-selector-button:hover {
             
             <div class="signup-section">
                 Don't have an account? <a href="signup.php">Sign up here</a>
+                <div style="text-align:center; margin-top:15px;">
+                <a href="index.php" style="color:#6a1b9a; font-weight:600; text-decoration:none;">
+                 ← Return to Home
+                </a>
+            </div>
+
             </div>
         </form>
     </div>
